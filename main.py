@@ -1,13 +1,15 @@
 # app.py
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory,Response,stream_with_context
 from generate_suject import PaperSubjectGenerator
-from catalog import PaperDirectoryGenerator
 from follow import paper_md
 from login import  UserAuthenticator
+from  thread import start_background_task
 paper_md=paper_md()
 paper_subject=PaperSubjectGenerator()
 
 app = Flask(__name__)
+
+
 
 @app.route('/api/login', methods=['POST'])
 def login():
@@ -19,16 +21,16 @@ def login():
 
 @app.route('/api/content', methods=['POST'])
 def content():
-    data=request.json
-    catalog=PaperDirectoryGenerator()
-    response, status =catalog.generate_directory(data)
-    return jsonify(response), status
+    data = request.json
+    generate = start_background_task(data, 'catalog')
+    return Response(stream_with_context(generate()), mimetype='text/event-stream')
 
 @app.route('/api/follow', methods=['POST'])
 def follow():
     data = request.json
-    response, status = paper_md.generate_follow(data)
-    return jsonify(response), status
+    generate = start_background_task(data, 'follow')
+    return Response(stream_with_context(generate()), mimetype='text/event-stream')
+
 
 @app.route('/api/typo', methods=['POST'])
 def typo():
@@ -45,6 +47,8 @@ def subject():
 @app.route('/essaywriter-head.svg')
 def serve_svg():
     return send_from_directory('static', 'essaywriter-head.svg')
+
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)

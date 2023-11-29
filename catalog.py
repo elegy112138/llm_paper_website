@@ -1,8 +1,9 @@
-from  llm_api import chatglm_pro
+from  llm_api import chatglm_turbo
+import json
 class PaperDirectoryGenerator:
 
 
-    def generate_directory(self, data):
+    async def generate_directory(self, queue,data):
         prompt = (
             "直接列出论文的目录结构，不包括'论文目录'等任何额外标题或介绍性的文字。只提供章节和子章节的标题。\n"
             "论文级别：{paper_level}\n"
@@ -21,44 +22,49 @@ class PaperDirectoryGenerator:
             paper_length=data['paper_length'],
             specific_requirement=data['specific_requirement']
         )
-        catalog=chatglm_pro(prompt)
-        result=self.format_directory(catalog)
-        if catalog:
-            return {"message": "success to generate catalog", "data":{"tree":result,"catalog":catalog},"status": 1}, 200
-        else:
-            return {"message": "failed to generate catalog", "status": 0}, 401
 
-    def format_directory(self,text):
-        # 将文本拆分成行并去除空格
-        lines = [line.strip() for line in text.split('\n') if line.strip()]
+        async for response in chatglm_turbo(prompt):
+            if response['event'] == 'add':
+                queue.put(f"data: {json.dumps(response['data'], ensure_ascii=False)}\n\n")
+            elif response['event'] == 'finish':
+                response['data'] = 'finish'
+                queue.put(f"data: {json.dumps(response['data'], ensure_ascii=False)}\n\n")
+                queue.put("STOP")
+                break
+            # 一定要在生成器结束时发送STOP信号
+        queue.put("STOP")
 
-        tree = []
-        current_parent = None
-
-        for line in lines:
-            # 删除子标题前的破折号
-            if line.startswith('- '):
-                line = line[2:]
-
-            # 检查是否是主标题，例如 "1. 引言"
-            if line.count('.') == 1 and line.split('.')[0].isdigit() and not line.split('.')[1][0].isdigit():
-                current_parent = {
-                    "key": line.split('.')[0],
-                    "title": line,
-                    "children": []
-                }
-                tree.append(current_parent)
-            # 检查是否是子标题，例如 "2.1 量子加密的基本原理"
-            elif line.count('.') == 1 and line.split('.')[0].isdigit() and line.split('.')[1][0].isdigit():
-                if current_parent and line.startswith(current_parent["key"] + '.'):
-                    sub_key, sub_title = line.split(' ', 1)
-                    sub_key = sub_key.split('.')[1]  # 只保留子标题的部分
-                    current_parent['children'].append({
-                        "key": f"{current_parent['key']}-{sub_key}",
-                        "title": line
-                    })
-
-        return  tree
+    # def format_directory(self,text):
+    #     # 将文本拆分成行并去除空格
+    #     lines = [line.strip() for line in text.split('\n') if line.strip()]
+    #
+    #     tree = []
+    #     current_parent = None
+    #
+    #     for line in lines:
+    #         # 删除子标题前的破折号
+    #         if line.startswith('- '):
+    #             line = line[2:]
+    #
+    #         # 检查是否是主标题，例如 "1. 引言"
+    #         if line.count('.') == 1 and line.split('.')[0].isdigit() and not line.split('.')[1][0].isdigit():
+    #             current_parent = {
+    #                 "key": line.split('.')[0],
+    #                 "title": line,
+    #                 "children": []
+    #             }
+    #             tree.append(current_parent)
+    #         # 检查是否是子标题，例如 "2.1 量子加密的基本原理"
+    #         elif line.count('.') == 1 and line.split('.')[0].isdigit() and line.split('.')[1][0].isdigit():
+    #             if current_parent and line.startswith(current_parent["key"] + '.'):
+    #                 sub_key, sub_title = line.split(' ', 1)
+    #                 sub_key = sub_key.split('.')[1]  # 只保留子标题的部分
+    #                 current_parent['children'].append({
+    #                     "key": f"{current_parent['key']}-{sub_key}",
+    #                     "title": line
+    #                 })
+    #
+    #     return  tree
 
 
 

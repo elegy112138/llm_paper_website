@@ -1,5 +1,5 @@
-from llm_api import chatglm_pro
-
+from llm_api import chatglm_pro,chatglm_turbo
+import json
 
 class paper_md:
     def __init__(self):
@@ -19,15 +19,19 @@ class paper_md:
         else:
             return {"message": "failed check text", "status": 0}, 401
 
-    def generate_follow(self, data):
+    async def generate_follow(self, queue,data):
         prompt = (
-            f"作为我的论文助手，你的任务是继续撰写我提供的论文内容。我将给你一个论文结构的草稿，格式为 Markdown。请根据我提供的 Markdown 内容 '{data['text']}' 继续写作，要求是从我给出的文本后面开始写作，而且不要给出多余的标题，保证续写就好。在你的回答中，请确保只包含所需的后续内容，，并避免包含任何不必要的信息。")
-        text = chatglm_pro(prompt)
-        text = self.format_text(text)
-        if text:
-            return {"message": "success to generate text", "data":{"text":text},"status": 1}, 200
-        else:
-            return {"message": "failed generate text", "status": 0}, 401
+            f"请在所提供的文本后续写，而不改变原文。您的续写应该紧接着原文的最后一个词开始，并且平滑地扩展文字。您应该从这句话的末尾开始续写，请确保您的续写内容与原文在逻辑上连贯，并且自然地衔接上文。续写文本如下：'{data['text']}'")
+        async for response in chatglm_turbo(prompt):
+            if response['event'] == 'add':
+                queue.put(f"data: {json.dumps(response['data'], ensure_ascii=False)}\n\n")
+            elif response['event'] == 'finish':
+                response['data']='finish'
+                queue.put(f"data: {json.dumps(response['data'], ensure_ascii=False)}\n\n")
+                queue.put("STOP")
+                break
+            # 一定要在生成器结束时发送STOP信号
+        queue.put("STOP")
 
     def format_text(self,text):
         # 移除可能存在的空白字符
