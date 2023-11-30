@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e39e4180-9dcf-4c24-b0af-e58b7e20176d" name="更改" comment="论文网站后端">
-      <change afterPath="$PROJECT_DIR$/thread.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/follow.py" beforeDir="false" afterPath="$PROJECT_DIR$/follow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generate_suject.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate_suject.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +185,7 @@
       <workItem from="1700801064865" duration="1491000" />
       <workItem from="1701237512546" duration="2591000" />
       <workItem from="1701240164630" duration="918000" />
-      <workItem from="1701241104587" duration="20704000" />
+      <workItem from="1701241104587" duration="25806000" />
     </task>
     <task id="LOCAL-00001" summary="项目源码">
       <option name="closed" value="true" />
@@ -209,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701241169200</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="论文网站后端">
+      <option name="closed" value="true" />
+      <created>1701264666849</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701264666849</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,7 +248,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/llm_paper$test.coverage" NAME="test 覆盖结果" MODIFIED="1699620621613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/llm_paper$llm_api.coverage" NAME="llm_api 覆盖结果" MODIFIED="1698389979667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/llm_paper$main.coverage" NAME="main 覆盖结果" MODIFIED="1701263167707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/llm_paper$main.coverage" NAME="main 覆盖结果" MODIFIED="1701340863291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/llm_paper$catalog.coverage" NAME="catalog 覆盖结果" MODIFIED="1698390622323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/llm_paper$sms.coverage" NAME="sms 覆盖结果" MODIFIED="1699851018472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

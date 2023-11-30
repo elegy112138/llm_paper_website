@@ -1,9 +1,10 @@
 from  llm_api import chatglm_pro
 import json
+import os
 
 class PaperSubjectGenerator:
     def generate_subject(self,data):
-        with open('example.txt', 'r', encoding='utf-8') as file:
+        with open('/home/ubuntu/llm_paper/example.txt', 'r', encoding='utf-8') as file:
             file_content = file.read()
         prompt = (
             "作为一个论文助手，你的任务是根据我提供的信息，生成五个相关的论文标题。我会给你三篇文章的标题和摘要供参考。请你根据以下信息，以数组的格式返回给我五个标题\n"
