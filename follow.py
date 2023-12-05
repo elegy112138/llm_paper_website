@@ -21,17 +21,17 @@ class paper_md:
 
     async def generate_follow(self, queue,data):
         prompt = (
-            f"请在所提供的文本后续写，而不改变原文。您的续写应该紧接着原文的最后一个词开始，并且平滑地扩展文字。您应该从这句话的末尾开始续写，请确保您的续写内容与原文在逻辑上连贯，并且自然地衔接上文。续写文本如下：'{data['text']}'")
+            f"请在所提供的文本后续写，而不改变原文。您的续写应该紧接着原文的最后一个词开始，并且平滑地扩展文字。并且需要以markdown格式续写。您应该从这句话的末尾开始续写，请确保您的续写内容与原文在逻辑上连贯，并且自然地衔接上文。续写文本如下：'{data['text']}'。请你以markdown格式返回续写内容")
         async for response in chatglm_turbo(prompt):
             if response['event'] == 'add':
                 queue.put(f"data: {json.dumps(response['data'], ensure_ascii=False)}\n\n")
             elif response['event'] == 'finish':
-                response['data']='finish'
+                response['data'] = ' ```'
                 queue.put(f"data: {json.dumps(response['data'], ensure_ascii=False)}\n\n")
                 queue.put("STOP")
                 break
             # 一定要在生成器结束时发送STOP信号
-        queue.put("STOP")
+        # queue.put("STOP")
 
     def format_text(self,text):
         # 移除可能存在的空白字符

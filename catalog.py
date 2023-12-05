@@ -14,6 +14,7 @@ class PaperDirectoryGenerator:
             "具体需求：{specific_requirement}\n"
             "格式要求：章节号后直接跟章节标题，子章节同样只列出编号和标题。\n"
             "结束后请不要有任何说明，尤其是‘注意’，谢谢"
+            "请以markdown格式返回给我"
         ).format(
             paper_level=data['paper_level'],
             academic_area=data['academic_area'],
@@ -27,12 +28,12 @@ class PaperDirectoryGenerator:
             if response['event'] == 'add':
                 queue.put(f"data: {json.dumps(response['data'], ensure_ascii=False)}\n\n")
             elif response['event'] == 'finish':
-                response['data'] = 'finish'
-                queue.put(f"data: {json.dumps(response['data'], ensure_ascii=False)}\n\n")
+                # response['data'] = 'finish'
+                # queue.put(f"data: {json.dumps(response['data'], ensure_ascii=False)}\n\n")
                 queue.put("STOP")
                 break
             # 一定要在生成器结束时发送STOP信号
-        queue.put("STOP")
+        # queue.put("STOP")
 
     # def format_directory(self,text):
     #     # 将文本拆分成行并去除空格

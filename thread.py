@@ -26,7 +26,7 @@ def start_background_task(data, task_type):
             message = q.get()
             print(message)
             if message == "STOP":
-                break
+                return
             yield message
 
     return generate

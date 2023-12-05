@@ -19,17 +19,28 @@ def login():
     response, status = user_login.check_login(phonenumber, password)
     return jsonify(response), status
 
-@app.route('/api/content', methods=['POST'])
-def content():
-    data = request.json
-    generate = start_background_task(data, 'catalog')
-    return Response(stream_with_context(generate()), mimetype='text/event-stream')
 
-@app.route('/api/follow', methods=['POST'])
+@app.route('/api/content', methods=['GET'])
+def content():
+    # data = request.json
+    generate = start_background_task(request.args, 'catalog')
+    response = Response(stream_with_context(generate()), mimetype='text/event-stream')
+
+    # 设置 CORS 头，允许所有来源访问
+    response.headers['Access-Control-Allow-Origin'] = '*'
+
+    return response
+
+
+@app.route('/api/follow', methods=['GET'])
 def follow():
-    data = request.json
-    generate = start_background_task(data, 'follow')
-    return Response(stream_with_context(generate()), mimetype='text/event-stream')
+    generate = start_background_task(request.args, 'follow')
+    response = Response(stream_with_context(generate()), mimetype='text/event-stream')
+
+    # 设置 CORS 头，允许所有来源访问
+    response.headers['Access-Control-Allow-Origin'] = '*'
+
+    return response
 
 
 @app.route('/api/typo', methods=['POST'])
