@@ -12,7 +12,7 @@ def follow_output(content):
         template=file_contents
     )
     chain = LLMChain(llm=wrapper.chat, prompt=prompt)
-    print(chain.run(content))
+    chain.run(content)
 
 def typo_output(content):
     wrapper = ChatModelWrapper("gpt-3.5-turbo", True,'typo_response')
@@ -22,7 +22,7 @@ def typo_output(content):
         template=file_contents
     )
     chain = LLMChain(llm=wrapper.chat, prompt=prompt)
-    print(chain.run(content))
+    chain.run(content)
 
 def polish_output(content):
     wrapper = ChatModelWrapper("gpt-3.5-turbo", True,'polish_response')
@@ -32,4 +32,4 @@ def polish_output(content):
         template=file_contents
     )
     chain = LLMChain(llm=wrapper.chat, prompt=prompt)
-    print(chain.run(content))
+    chain.run(content)

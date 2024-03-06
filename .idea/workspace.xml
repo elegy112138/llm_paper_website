@@ -5,34 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e39e4180-9dcf-4c24-b0af-e58b7e20176d" name="更改" comment="websocket 实现流式传输">
-      <change afterPath="$PROJECT_DIR$/config/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generate_catalog.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prompt/catalog.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prompt/catalog_follow.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prompt/follow.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prompt/polish.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prompt/summary.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prompt/typo.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/catalog/generate_catalog.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/follow/follow.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/login/login.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/login/verify_login.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/save/save_acticle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/subject/generate_subject.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_connect.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/db_connect.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/environment.yml" beforeDir="false" afterPath="$PROJECT_DIR$/environment.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/essaywriter-head.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/follow.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/generate_suject.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate_suject.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm_api.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prompt/subject.txt" beforeDir="false" afterPath="$PROJECT_DIR$/prompt/subject.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thread.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prompt/typo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/prompt/typo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/follow/follow.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/follow/follow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/save/save_acticle.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/save/save_acticle.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +96,7 @@
       <recent name="C:\Users\gtc\Desktop\llm_paper" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Flask 服务器.llm_paper">
     <configuration name="catalog" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="llm_paper" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -133,6 +111,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/catalog.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="llm_paper" type="PythonConfigurationType" factoryName="Python">
+      <module name="llm_paper" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -216,6 +216,7 @@
     </configuration>
     <list>
       <item itemvalue="Flask 服务器.llm_paper" />
+      <item itemvalue="Python.llm_paper" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.test" />
       <item itemvalue="Python.catalog" />
@@ -250,7 +251,13 @@
       <workItem from="1701241104587" duration="78733000" />
       <workItem from="1701942726333" duration="59000" />
       <workItem from="1701944265499" duration="98048000" />
-      <workItem from="1703156088190" duration="20184000" />
+      <workItem from="1703156088190" duration="25684000" />
+      <workItem from="1703683557141" duration="1470000" />
+      <workItem from="1703763661832" duration="591000" />
+      <workItem from="1704272143199" duration="1158000" />
+      <workItem from="1705394901983" duration="1211000" />
+      <workItem from="1705737714212" duration="1953000" />
+      <workItem from="1709622602407" duration="589000" />
     </task>
     <task id="LOCAL-00001" summary="项目源码">
       <option name="closed" value="true" />
@@ -292,7 +299,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701852515919</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="websocket 实现流式传输">
+      <option name="closed" value="true" />
+      <created>1703486771951</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1703486771952</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +345,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/llm_paper$test.coverage" NAME="test 覆盖结果" MODIFIED="1703222671552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/llm_paper$llm_api.coverage" NAME="llm_api 覆盖结果" MODIFIED="1698389979667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/llm_paper$main.coverage" NAME="main 覆盖结果" MODIFIED="1703392031247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/llm_paper$main.coverage" NAME="main 覆盖结果" MODIFIED="1703684113935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/llm_paper$catalog.coverage" NAME="catalog 覆盖结果" MODIFIED="1698390622323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/llm_paper$sms.coverage" NAME="sms 覆盖结果" MODIFIED="1699851018472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

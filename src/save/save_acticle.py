@@ -82,7 +82,8 @@ def update_article(data):
     # 构造更新操作的内容
     new_values = {"$set": {
         "Title": data['Title'],
-        "Content": data['Content']
+        "Content": data['Content'],
+        "intro": data['intro']
     }}
 
     # 根据article_id执行更新操作

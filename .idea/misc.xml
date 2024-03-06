@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="Remote Python 3.12.0 (sftp://ubuntu@10.220.138.94:22/home/ubuntu/anaconda3/envs/milvus/bin/python3)" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Remote Python 3.12.0 (sftp://ubuntu@10.220.138.94:22/home/ubuntu/anaconda3/envs/milvus/bin/python3)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="论文大模型" project-jdk-type="Python SDK" />
 </project>

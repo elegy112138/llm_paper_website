@@ -6,8 +6,8 @@ from flask_socketio import emit
 class ChatModelWrapper:
     def __init__(self, model_name,stream,response_name='my_event'):
         # 固定的环境变量值
-        api_key = "sk-83oW8ytjMFgzbSCY2a90Ee8355974d33B1289f7eA657882e"
-        api_base = "https://api.xbbdkj.com/v1"
+        api_key = "sk-YXXtQVrIHMmEeHT4148a98D03cEf404392E546C482962978"
+        api_base = "https://api.rcouyi.com/v1"
 
         # 设置环境变量
         os.environ["OPENAI_API_KEY"] = api_key
@@ -28,10 +28,12 @@ class ChatModelWrapper:
     class StreamOnlyCallbackHandler(BaseCallbackHandler):
         def __init__(self, response_name):
             self.response_name = response_name
-        def on_llm_new_token(self, token: str, **kwargs: any) -> any:
+        def on_llm_new_token(self, token: str, chunk, run_id, parent_run_id=None, **kwargs):
             # 这里可以根据需要进行操作
-            emit(self.response_name, {'token': token})
-
+            if token:
+                emit(self.response_name, {'token': token})
+            else:
+                emit(self.response_name, {'token': 'finished'})
     def read_prompt_file(self, file_path):
         with open('/home/ubuntu/llm_paper/prompt/'+file_path, 'r') as file:
             file_contents = file.read()
