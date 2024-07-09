@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e39e4180-9dcf-4c24-b0af-e58b7e20176d" name="更改" comment="websocket 实现流式传输">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prompt/typo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/prompt/typo.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/follow/follow.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/follow/follow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/save/save_acticle.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/save/save_acticle.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +69,7 @@
     &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
     &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/gtc/Desktop/llm_paper&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/gtc/Desktop/yemaTech&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -258,6 +254,13 @@
       <workItem from="1705394901983" duration="1211000" />
       <workItem from="1705737714212" duration="1953000" />
       <workItem from="1709622602407" duration="589000" />
+      <workItem from="1710839502190" duration="41000" />
+      <workItem from="1710839753137" duration="1511000" />
+      <workItem from="1710922106165" duration="15000" />
+      <workItem from="1711346935659" duration="1457000" />
+      <workItem from="1711538926813" duration="604000" />
+      <workItem from="1711970336649" duration="9599000" />
+      <workItem from="1720509021142" duration="673000" />
     </task>
     <task id="LOCAL-00001" summary="项目源码">
       <option name="closed" value="true" />
